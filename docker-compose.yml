@@ -1,0 +1,12 @@
+version: '3.8'
+
+services: 
+  frontend:
+    build:
+      context: .
+      args:
+        - VITE_API_BASE_URL=${VITE_API_BASE_URL:-http://localhost:8000}
+    image: desafio-chat-frontend:latest
+    container_name: chat-frontend
+    ports:
+      - "3000:80"
